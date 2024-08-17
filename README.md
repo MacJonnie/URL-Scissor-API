@@ -5,12 +5,12 @@ The API also makes provision for Analytics as the users can track their record f
 This makes it a great tool for any bussiness as the URL Scissor offers alot of functionality useful for any mordern day businesses and personal use.
 
 Technologies:
-Node.js
-Express.js
-MongoDB
-Nanoid
-QrCode
-JWT
+Node.js,
+Express.js,
+MongoDB,
+Nanoid,
+QrCode,
+JWT,
 Express Rate Limit
 
 Features:
