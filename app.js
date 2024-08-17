@@ -22,8 +22,12 @@ app.use("/urlApi/users", userRouter);
 app.use("/urlApi/qrcode", qrRouter);
 
 
-app.get("/", (req, res) => {
-    res.send("Welcome to John.E U-Cut");
+app.get("/urlApi", (req, res) => {
+    res.send("Welcome to John.E URL Scissor");
+});
+
+app.all("*", (req, res) => {
+    res.status(404).jsonp({ message: "Page not found" });
 });
 
 const PORT = process.env.PORT || 3000;
