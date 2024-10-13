@@ -11,7 +11,8 @@ MongoDB,
 Nanoid,
 QrCode,
 JWT,
-Express Rate Limit
+Express Rate Limit,
+SwaggerJsDocs and SwaggerUi
 
 Features:
 The following are the features of URL Scissor API:
