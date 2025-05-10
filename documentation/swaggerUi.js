@@ -6,7 +6,7 @@ const options = {
     info: {
       title: 'URL Shortener API',
       version: '1.0.0',
-      description: 'API for shortening URLs and managing user accounts',
+      description: 'Shorten your URL and generate a QRCode with ease. By John Emori.',
     },
     components: {
       securitySchemes: {
