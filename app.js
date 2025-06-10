@@ -10,6 +10,7 @@ import swaggerSpec from './documentation/swaggerUi.js';
 
 const app = express()
 
+// SwagwgerUi Documentation
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec, {
     authorizations: {
         bearerAuth: {
