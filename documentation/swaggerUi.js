@@ -19,7 +19,7 @@ const options = {
     },
     servers: [
       {
-        url: 'http://localhost:4005/urlApi', // adjust to your API URL
+        url: 'https://localhost:4005/urlApi', // adjust to your API URL
       },
     ],
   },
@@ -27,5 +27,6 @@ const options = {
 };
 
 const swaggerSpec = swaggerJsdoc(options);
+
 
 export default swaggerSpec;
