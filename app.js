@@ -4,11 +4,13 @@ import urlRouter from "./routes/urlRoutes.js";
 import userRouter from "./routes/usersRoutes.js";
 import qrRouter from "./routes/qrCodeRoutes.js";
 import limiter from "./utils/limiter.js";
+import cors from "cors";
 import dotenv from "dotenv";
 import swaggerUi from 'swagger-ui-express';
 import swaggerSpec from './documentation/swaggerUi.js';
 
 const app = express()
+app.use(cors)
 
 // SwagwgerUi Documentation
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec, {
