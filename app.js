@@ -10,7 +10,7 @@ import swaggerUi from 'swagger-ui-express';
 import swaggerSpec from './documentation/swaggerUi.js';
 
 const app = express()
-app.use(cors)
+app.use(cors())
 
 // SwagwgerUi Documentation
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec, {
