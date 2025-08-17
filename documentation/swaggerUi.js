@@ -19,11 +19,11 @@ const options = {
     },
     servers: [
       {
-        url: 'https://localhost:4005/urlApi', // adjust to your API URL
+        url: 'http://localhost:4005/urlApi',
       },
     ],
   },
-  apis: ['./routes/*.js'], // adjust to your routes file location
+  apis: ['./routes/*.js'],
 };
 
 const swaggerSpec = swaggerJsdoc(options);
