@@ -19,7 +19,7 @@ const options = {
     },
     servers: [
       {
-        url: 'http://localhost:4005/urlApi',
+        url: 'https://localhost:4005/urlApi',
       },
     ],
   },
