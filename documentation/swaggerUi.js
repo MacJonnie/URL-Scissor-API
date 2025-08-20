@@ -19,8 +19,8 @@ const options = {
     },
     servers: [
       {
-        url: 'https://localhost:4005/urlApi',
-      },
+      url: 'https://url-scissor-api-7.onrender.com/urlApi',
+      }
     ],
   },
   apis: ['./routes/*.js'],
