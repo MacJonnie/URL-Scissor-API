@@ -8,6 +8,7 @@ const qrRouter = express.Router();
  * /generateQr:
  *   post:
  *     summary: Generate a QR code
+ *     tags: [QRCode]
  *     description: Generate a QR code for a given URL or text
  *     security:
  *       - bearerAuth: []

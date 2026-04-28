@@ -48,6 +48,7 @@ userRouter.post("/signUp", signUp, function (req, res) {
  * /users/signIn:
  *   post:
  *     summary: Sign in a user
+ *     tags: [Users]
  *     description: Sign in a user with email and password
  *     requestBody:
  *       description: User credentials
@@ -86,12 +87,13 @@ userRouter.post("/signIn", signIn, function (req, res) {
  * /users/getUserUrlCount:
  *   get:
  *     summary: Get the number of URLs created by a user
+ *     tags: [Users]
  *     description: Get the number of URLs created by a user
  *     security:
  *       - bearerAuth: []
  *     parameters:
  *       - in: query
- *         name: email
+ *         name: userId
  *         required: true
  *         schema:
  *           type: string

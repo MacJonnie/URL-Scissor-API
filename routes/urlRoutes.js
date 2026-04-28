@@ -10,6 +10,7 @@ const urlRouter = express.Router();
  * /shortUrl:
  *   post:
  *     summary: Create a short URL
+ *     tags: [URLs]
  *     description: Create a short URL for a given long URL
  *     security:
  *       - bearerAuth: []
@@ -49,6 +50,7 @@ urlRouter.post("/shortUrl", verifyToken, shortUrl, function (req, res) {
  * /customUrl:
  *   post:
  *     summary: Create a custom URL
+ *     tags: [URLs]
  *     description: Create a custom URL for a given long URL
  *     security:
  *       - bearerAuth: []
@@ -91,6 +93,7 @@ urlRouter.post("/customUrl", verifyToken, customUrl, function (req, res) {
  * /customUrl/{customId}:
  *   get:
  *     summary: Redirect to the original URL
+ *     tags: [URLs]
  *     description: Redirect to the original URL for a given custom URL
  *     parameters:
  *       - in: path
@@ -115,6 +118,7 @@ urlRouter.get("/customUrl/:customId", redirectUrl, function (req, res){
  * /shortUrl/{urlId}:
  *   get:
  *     summary: Redirect to the original URL
+ *     tags: [URLs]
  *     description: Redirect to the original URL for a given short URL
  *     parameters:
  *       - in: path
@@ -139,6 +143,7 @@ urlRouter.get("/shortUrl/:urlId", redirectUrl, function (req, res){
  * /updateShortUrl:
  *   put:
  *     summary: Update a short URL
+ *     tags: [URLs]
  *     description: Update a short URL
  *     security:
  *       - bearerAuth: []
@@ -173,6 +178,7 @@ urlRouter.put("/updateShortUrl", updateShortUrl, function (req, res){
  * /updateCustomUrl:
  *   put:
  *     summary: Update a custom URL
+ *     tags: [URLs]
  *     description: Update a custom URL
  *     security:
  *       - bearerAuth: []
@@ -207,6 +213,7 @@ urlRouter.put("/updateCustomUrl", updateCustomUrl, function (req, res){
  * /deleteUrl:
  *   delete:
  *     summary: Delete a URL
+ *     tags: [URLs]
  *     description: Delete a URL
  *     security:
  *       - bearerAuth: []
