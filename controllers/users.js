@@ -61,10 +61,15 @@ const signIn = (req, res) => {
 const getUserUrlCount = async (req, res) => {
   
   try {
-    const userEmail = user._email;
-    const urlCount = await urlModel.countDocuments({ userEmail });
-    res.json({ urlCount });
-    console.log(`Your Url Count is ${urlCount}`);
+    const email = req.body.email;
+    const user = await User.findOne({ email }).then(user => {
+      if (!user) {
+        return res.status(404).json({ message: 'User not found' });
+      }
+      const urlCount =  urlModel.countDocuments({ userId: user._id });
+    });
+    
+    return res.status(200).json({ message: `User has created ${urlCount} URLs` });
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: 'Internal Server Error' });

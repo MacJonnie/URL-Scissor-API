@@ -89,14 +89,19 @@ userRouter.post("/signIn", signIn, function (req, res) {
  *     summary: Get the number of URLs created by a user
  *     tags: [Users]
  *     description: Get the number of URLs created by a user
- *     security:
- *       - bearerAuth: []
- *     parameters:
- *       - in: query
- *         name: userEmail
- *         required: true
- *         schema:
- *           type: string
+ *    security:
+ *     - bearerAuth: []
+ *    requestBody:
+ *      description: User email
+ *     content:
+ *      application/json:
+ *        schema:
+ *         type: object
+ *        required:
+ *         - email
+ *       properties:
+ *        email:
+ *        type: string
  *     responses:
  *       200:
  *         description: User URL count
