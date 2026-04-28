@@ -39,7 +39,7 @@ const signIn = (req, res) => {
           return res.status(401).send({ accessToken: null, message: "Invalid Password!" });
         }
   
-        const token = jwt.sign({ userId: user._id, userEmail: user._email }, process.env.API_SECRET, { expiresIn: "1h" });
+        const token = jwt.sign({ userId: user._id, userEmail: user.email }, process.env.API_SECRET, { expiresIn: "1h" });
   
         res.status(200).send({
           user: { userId: user._id, email: user.email, userName: user.userName },
@@ -58,21 +58,20 @@ const signIn = (req, res) => {
 };
 
 // Get a User Url count...
-const getUserUrlCount = async (req, res) => {
-  
+export const getUserUrlCount = async (req, res) => {
   try {
-    const email = req.body.email;
-    const user = await User.findOne({ email }).then(user => {
-      if (!user) {
-        return res.status(404).json({ message: 'User not found' });
-      }
-      const urlCount =  urlModel.countDocuments({ userId: user._id });
+    const userId = req.user.userId;
+
+    const urlCount = await urlModel.countDocuments({ userId });
+
+    return res.status(200).json({
+      message: `User has created ${urlCount} URLs`,
+      count: urlCount
     });
-    
-    return res.status(200).json({ message: `User has created ${urlCount} URLs` });
+
   } catch (err) {
     console.error(err);
-    res.status(500).json({ error: 'Internal Server Error' });
+    return res.status(500).json({ error: 'Internal Server Error' });
   }
 };
 
