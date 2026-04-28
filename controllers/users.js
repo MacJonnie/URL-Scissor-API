@@ -39,7 +39,7 @@ const signIn = (req, res) => {
           return res.status(401).send({ accessToken: null, message: "Invalid Password!" });
         }
   
-        const token = jwt.sign({ userId: user._id }, process.env.API_SECRET, { expiresIn: "1h" });
+        const token = jwt.sign({ userId: user._id, userEmail: user._email }, process.env.API_SECRET, { expiresIn: "1h" });
   
         res.status(200).send({
           user: { userId: user._id, email: user.email, userName: user.userName },
@@ -61,8 +61,8 @@ const signIn = (req, res) => {
 const getUserUrlCount = async (req, res) => {
   
   try {
-    const userId = User._id;
-    const urlCount = await urlModel.countDocuments({ userId });
+    const userEmail = user._email;
+    const urlCount = await urlModel.countDocuments({ userEmail });
     res.json({ urlCount });
     console.log(`Your Url Count is ${urlCount}`);
   } catch (err) {

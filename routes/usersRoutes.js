@@ -93,7 +93,7 @@ userRouter.post("/signIn", signIn, function (req, res) {
  *       - bearerAuth: []
  *     parameters:
  *       - in: query
- *         name: userId
+ *         name: userEmail
  *         required: true
  *         schema:
  *           type: string
