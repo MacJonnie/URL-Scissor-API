@@ -46,7 +46,6 @@ app.all("*", (req, res) => {
     res.status(404).jsonp({ message: "Page not found" });
 });
 
-
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Sever is running on port ${PORT}...`)

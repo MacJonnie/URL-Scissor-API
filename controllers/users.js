@@ -58,7 +58,7 @@ const signIn = (req, res) => {
 };
 
 // Get a User Url count...
-export const getUserUrlCount = async (req, res) => {
+const getUserUrlCount = async (req, res) => {
   try {
     const userId = req.user.userId;
 
