@@ -9,7 +9,7 @@ const userRouter = express.Router();
  * /users/signUp:
  *   post:
  *     summary: Create a new user
- *     description: Create a new user with email, password, and username
+ *     tags: [Users]
  *     requestBody:
  *       description: User credentials
  *       content:
