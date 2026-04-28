@@ -86,32 +86,30 @@ userRouter.post("/signIn", signIn, function (req, res) {
  * @swagger
  * /users/getUserUrlCount:
  *   get:
- *     summary: Get the number of URLs created by a user
- *     tags: [Users]
- *     description: Get the number of URLs created by a user
- *    security:
- *     - bearerAuth: []
+ *    summary: Get the count of URLs created by a user
+ *    tags: [Users]
+ *    description: Get the count of URLs created by a user using their email
  *    requestBody:
  *      description: User email
- *     content:
- *      application/json:
- *        schema:
- *         type: object
- *        required:
- *         - email
- *       properties:
- *        email:
- *        type: string
- *     responses:
- *       200:
- *         description: User URL count
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 message:
- *                   type: string
+ *      content:
+ *        application/json:
+ *          schema:
+ *            type: object
+ *            required:
+ *              - email
+ *            properties:
+ *              email:
+ *                type: string
+ *    responses:
+ *      200:
+ *        description: User URL count
+ *        content:
+ *          application/json:
+ *            schema:
+ *              type: object
+ *              properties:
+ *                message:
+ *                  type: string
  */
 // Get user Url count Route...
 userRouter.get("/getUserUrlCount", verifyToken, getUserUrlCount, function (req, res) {
